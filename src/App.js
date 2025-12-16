@@ -12,99 +12,275 @@ function App() {
     { icon: CheckCircle, title: 'Auto-Deploy', desc: 'CI/CD integrated' }
   ];
 
+  const styles = {
+    container: {
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
+    },
+    header: {
+      background: 'white',
+      padding: '24px',
+      boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+    },
+    headerTitle: {
+      fontSize: '32px',
+      fontWeight: 'bold',
+      color: '#5a67d8',
+      margin: '0 0 8px 0'
+    },
+    headerSubtitle: {
+      color: '#718096',
+      margin: 0
+    },
+    main: {
+      maxWidth: '1200px',
+      margin: '0 auto',
+      padding: '48px 24px'
+    },
+    card: {
+      background: 'white',
+      borderRadius: '12px',
+      boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+      padding: '32px',
+      marginBottom: '32px'
+    },
+    cardTitle: {
+      fontSize: '24px',
+      fontWeight: 'bold',
+      color: '#2d3748',
+      marginBottom: '16px'
+    },
+    cardText: {
+      color: '#718096',
+      marginBottom: '24px',
+      lineHeight: '1.6'
+    },
+    counterSection: {
+      background: '#edf2f7',
+      borderRadius: '12px',
+      padding: '24px',
+      marginBottom: '24px'
+    },
+    counterTitle: {
+      fontSize: '18px',
+      fontWeight: '600',
+      color: '#2d3748',
+      marginBottom: '16px'
+    },
+    counterControls: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: '16px'
+    },
+    button: {
+      padding: '12px 24px',
+      border: 'none',
+      borderRadius: '8px',
+      fontSize: '16px',
+      fontWeight: '600',
+      cursor: 'pointer',
+      transition: 'all 0.2s'
+    },
+    buttonMinus: {
+      background: '#f56565',
+      color: 'white'
+    },
+    buttonPlus: {
+      background: '#48bb78',
+      color: 'white'
+    },
+    buttonReset: {
+      background: '#718096',
+      color: 'white'
+    },
+    countDisplay: {
+      fontSize: '36px',
+      fontWeight: 'bold',
+      color: '#5a67d8',
+      width: '80px',
+      textAlign: 'center'
+    },
+    inputSection: {
+      background: '#faf5ff',
+      borderRadius: '12px',
+      padding: '24px'
+    },
+    input: {
+      width: '100%',
+      padding: '12px',
+      border: '2px solid #d6bcfa',
+      borderRadius: '8px',
+      fontSize: '16px',
+      marginBottom: '12px',
+      boxSizing: 'border-box'
+    },
+    greeting: {
+      fontSize: '20px',
+      color: '#553c9a',
+      fontWeight: '500'
+    },
+    greetingName: {
+      color: '#44337a',
+      fontWeight: 'bold'
+    },
+    featuresGrid: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+      gap: '24px',
+      marginBottom: '32px'
+    },
+    featureCard: {
+      background: 'white',
+      borderRadius: '12px',
+      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      padding: '24px',
+      transition: 'box-shadow 0.2s'
+    },
+    featureIcon: {
+      marginBottom: '12px'
+    },
+    featureTitle: {
+      fontSize: '18px',
+      fontWeight: '600',
+      color: '#2d3748',
+      marginBottom: '8px'
+    },
+    featureDesc: {
+      color: '#718096',
+      fontSize: '14px'
+    },
+    cta: {
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      borderRadius: '12px',
+      padding: '32px',
+      color: 'white'
+    },
+    ctaTitle: {
+      fontSize: '24px',
+      fontWeight: 'bold',
+      marginBottom: '12px'
+    },
+    ctaText: {
+      marginBottom: '16px',
+      opacity: 0.9,
+      lineHeight: '1.6'
+    },
+    ctaButton: {
+      background: 'white',
+      color: '#5a67d8',
+      padding: '12px 24px',
+      border: 'none',
+      borderRadius: '8px',
+      fontSize: '16px',
+      fontWeight: '600',
+      cursor: 'pointer'
+    },
+    footer: {
+      background: 'white',
+      borderTop: '1px solid #e2e8f0',
+      padding: '24px',
+      textAlign: 'center',
+      color: '#718096'
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-indigo-600">Azure Static Web App Demo</h1>
-          <p className="text-gray-600 mt-1">React + Azure = ⚡️</p>
-        </div>
+    <div style={styles.container}>
+      <header style={styles.header}>
+        <h1 style={styles.headerTitle}>Azure Static Web App Demo</h1>
+        <p style={styles.headerSubtitle}>React + Azure = ⚡️</p>
       </header>
 
-      <main className="max-w-6xl mx-auto px-4 py-12">
-        {/* Hero Section */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Welcome to Your App!</h2>
-          <p className="text-gray-600 mb-6">
+      <main style={styles.main}>
+        <div style={styles.card}>
+          <h2 style={styles.cardTitle}>Welcome to Your App!</h2>
+          <p style={styles.cardText}>
             This is a feature-rich demo showcasing React components deployed on Azure Static Web Apps.
           </p>
 
-          {/* Interactive Counter */}
-          <div className="bg-indigo-50 rounded-lg p-6 mb-6">
-            <h3 className="text-lg font-semibold text-indigo-900 mb-4">Interactive Counter</h3>
-            <div className="flex items-center gap-4">
+          <div style={styles.counterSection}>
+            <h3 style={styles.counterTitle}>Interactive Counter</h3>
+            <div style={styles.counterControls}>
               <button
                 onClick={() => setCount(count - 1)}
-                className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
+                style={{...styles.button, ...styles.buttonMinus}}
+                onMouseOver={(e) => e.target.style.opacity = '0.9'}
+                onMouseOut={(e) => e.target.style.opacity = '1'}
               >
                 -
               </button>
-              <span className="text-4xl font-bold text-indigo-600 w-20 text-center">{count}</span>
+              <span style={styles.countDisplay}>{count}</span>
               <button
                 onClick={() => setCount(count + 1)}
-                className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+                style={{...styles.button, ...styles.buttonPlus}}
+                onMouseOver={(e) => e.target.style.opacity = '0.9'}
+                onMouseOut={(e) => e.target.style.opacity = '1'}
               >
                 +
               </button>
               <button
                 onClick={() => setCount(0)}
-                className="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition ml-2"
+                style={{...styles.button, ...styles.buttonReset}}
+                onMouseOver={(e) => e.target.style.opacity = '0.9'}
+                onMouseOut={(e) => e.target.style.opacity = '1'}
               >
                 Reset
               </button>
             </div>
           </div>
 
-          {/* Name Input */}
-          <div className="bg-purple-50 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-purple-900 mb-4">Personalized Greeting</h3>
+          <div style={styles.inputSection}>
+            <h3 style={styles.counterTitle}>Personalized Greeting</h3>
             <input
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Enter your name..."
-              className="w-full px-4 py-2 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 mb-3"
+              style={styles.input}
             />
             {name && (
-              <p className="text-xl text-purple-700 font-medium">
-                Hello, <span className="text-purple-900 font-bold">{name}</span>! 👋
+              <p style={styles.greeting}>
+                Hello, <span style={styles.greetingName}>{name}</span>! 👋
               </p>
             )}
           </div>
         </div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div style={styles.featuresGrid}>
           {features.map((feature, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow"
+              style={styles.featureCard}
+              onMouseOver={(e) => e.currentTarget.style.boxShadow = '0 10px 15px rgba(0,0,0,0.1)'}
+              onMouseOut={(e) => e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'}
             >
-              <feature.icon className="w-12 h-12 text-indigo-600 mb-3" />
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">{feature.title}</h3>
-              <p className="text-gray-600 text-sm">{feature.desc}</p>
+              <div style={styles.featureIcon}>
+                <feature.icon size={48} color="#5a67d8" />
+              </div>
+              <h3 style={styles.featureTitle}>{feature.title}</h3>
+              <p style={styles.featureDesc}>{feature.desc}</p>
             </div>
           ))}
         </div>
 
-        {/* Info Card */}
-        <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg shadow-lg p-8 text-white">
-          <h2 className="text-2xl font-bold mb-3">Ready to Deploy? 🚀</h2>
-          <p className="mb-4 opacity-90">
+        <div style={styles.cta}>
+          <h2 style={styles.ctaTitle}>Ready to Deploy? 🚀</h2>
+          <p style={styles.ctaText}>
             Push your code to GitHub and let Azure Static Web Apps handle the rest with automatic builds and deployments.
           </p>
-          <button className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+          <button
+            style={styles.ctaButton}
+            onMouseOver={(e) => e.target.style.background = '#f7fafc'}
+            onMouseOut={(e) => e.target.style.background = 'white'}
+          >
             Learn More
           </button>
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="bg-white border-t mt-12">
-        <div className="max-w-6xl mx-auto px-4 py-6 text-center text-gray-600">
-          <p>Built with React ⚛️ • Deployed on Azure ☁️</p>
-        </div>
+      <footer style={styles.footer}>
+        <p>Built with React ⚛️ • Deployed on Azure ☁️</p>
       </footer>
     </div>
   );
